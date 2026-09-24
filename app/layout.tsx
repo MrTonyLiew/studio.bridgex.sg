@@ -16,6 +16,13 @@ export const metadata: Metadata = {
   title: "BridgeX Studio | Build what matters",
   description:
     "A guided way to choose the right BridgeX services and shape your next project.",
+  openGraph: {
+    title: "BridgeX Studio | Build what matters",
+    description:
+      "Websites, brand, campaigns and ongoing support — scoped with you and quoted in writing.",
+    siteName: "BridgeX Studio",
+    type: "website",
+  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
