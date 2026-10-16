@@ -1,13 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-
-const services = [
-  { id: "website", number: "01", title: "Websites", text: "A clear, credible home for your business, idea or community.", tag: "Digital presence" },
-  { id: "brand", number: "02", title: "Brand & design", text: "A visual identity that helps people recognise and remember you.", tag: "Make it memorable" },
-  { id: "campaign", number: "03", title: "Campaigns", text: "Focused creative support for launches, events and growth.", tag: "Move people" },
-  { id: "support", number: "04", title: "Ongoing support", text: "A reliable partner to improve, update and keep things moving.", tag: "Stay current" },
-];
+import { services } from "./site";
 
 export default function Home() {
   const [selected, setSelected] = useState<string[]>([]);
