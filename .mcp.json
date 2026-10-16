@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "gsc": {
+      "command": "bash",
+      "args": ["${CLAUDE_PROJECT_DIR:-.}/scripts/gsc-mcp.sh"]
+    },
+    "geo-optimizer": {
+      "command": "uvx",
+      "args": ["--from", "geo-optimizer-skill[mcp]==4.19.2", "geo-mcp"],
+      "env": {
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  }
+}

@@ -94,6 +94,28 @@ actions tied to the current ChatGPT user. Leave public content anonymous.
 - `npm test`: build the starter and verify its rendered loading skeleton
 - `npm run db:generate`: generate Drizzle migrations after schema changes
 
+## SEO / GEO Tooling (Claude Code)
+
+`.mcp.json` declares two MCP servers for this project. Cloud sessions load them
+automatically; local Claude Code asks you to approve them once. Both run through
+`uvx` with pinned versions, so `uv` must be installed.
+
+- `gsc`: Google Search Console via
+  [mcp-search-console](https://github.com/AminForou/mcp-gsc), launched by
+  `scripts/gsc-mcp.sh` with service-account auth. Destructive tools (add/delete
+  site, delete sitemap) stay disabled.
+  - In Google Cloud, enable the Search Console API and create a service account
+    key. In Search Console, add the service account email as a user on the
+    `studio.bridgex.sg` property only.
+  - Cloud sessions: store the key as the environment variable
+    `GSC_SERVICE_ACCOUNT_JSON` (raw JSON, or `base64 -w0 key.json`). The
+    launcher writes it to `~/.config/gsc/service-account.json` with mode 600.
+  - Local: put the key at `~/.config/gsc/service-account.json` or point
+    `GSC_CREDENTIALS_PATH` at it. Never commit the key.
+- `geo-optimizer`: GEO audits for AI search engines via
+  [geo-optimizer-skill](https://github.com/Auriti-Labs/geo-optimizer-skill).
+  Its workflow is vendored as the project skill `.claude/skills/geo-optimizer/`.
+
 ## Learn More
 
 - [vinext Documentation](https://github.com/cloudflare/vinext)

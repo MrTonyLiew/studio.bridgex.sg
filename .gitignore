@@ -21,6 +21,8 @@
 # misc
 .DS_Store
 *.pem
+service-account*.json
+client_secret*.json
 
 # debug
 npm-debug.log*
